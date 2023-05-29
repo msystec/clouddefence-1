@@ -27,7 +27,7 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Run Cloud Defense AI
-        uses: cloudfenseai/github-action@v1
+        uses: actions/checkout@v1
         with:
           api_key: ${{ secrets.API_KEY }}
 
