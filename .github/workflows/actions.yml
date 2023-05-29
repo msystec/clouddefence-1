@@ -26,7 +26,11 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
+      - name: Run Cloud Defense AI
+        uses: cloudfenseai/github-action@v1
+        with:
+          api_key: ${{ secrets.API_KEY }}
+
       
   
 
