@@ -3,7 +3,7 @@ description: "Check your application for vulnerabilties using CloudDefense"
 author: "PG"
 branding:
  icon: "alert-triangle"
-  color: "yellow"
+ color: "yellow"
 inputs:
   command:
     description: "Which Cloud Defense command to run, defaults to sca"
