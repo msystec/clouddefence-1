@@ -25,7 +25,7 @@ jobs:
       - name: CloudDefense AI Scan
         run: |
           # Install CloudDefense AI CLI
-          curl -sSL https://get.clouddefense.ai/cli/install.sh | sh
+          pip install clouddefenseai
 
           # Authenticate with CloudDefense AI using the API key from secrets
           clouddefense login --api-key ${{ secrets.API_KEY }}
