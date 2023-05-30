@@ -27,4 +27,4 @@ jobs:
         uses: actions/checkout@v2
         
       - name: Install CloudDefense CLI
-        run: pip install clouddefense
+        run: sudo yum install git
