@@ -1,10 +1,6 @@
 name: CloudDefense AI Scan
 
-on:
-  pull_request:
-    types:
-      - opened
-      - synchronize
+on:[push]
 
 jobs:
   scan:
