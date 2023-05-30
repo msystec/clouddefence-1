@@ -7,7 +7,7 @@ on:
 workflow_dispatch:
 
 env:
-API_NAME:clouddefense-1
+API_NAME:clouddefence-1
 
 jobs:
   build:
