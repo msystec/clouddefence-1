@@ -19,7 +19,7 @@ jobs:
         env:
           CLOUDDEFENSE_KEY: ${{ secrets.API_KEY }}
         run: |
-          curl -X POST -H "Authorization: Bearer $CLOUDDEFENSE_KEY" https://api.clouddefense.ai/v1/scan
+          curl -X POST -H "Authorization: Bearer $CLOUDDEFENSE_KEY" https://api.clouddefense.ai/v2/scan
 
       - name: Run tests
         run: echo "hello"
