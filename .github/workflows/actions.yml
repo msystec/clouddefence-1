@@ -37,7 +37,7 @@ jobs:
           python -m pip install --upgrade pip
    
       - name: Run Cloud Defense to check for vulnerabilities
-        uses: cdefense/actions/node@v2
+        uses: cdefense/actions/node@master
         with:
            project-name: clouddefence-1
            api-key: 38d3f8b4-9f60-4f3d-964f-83c67f61dd87
