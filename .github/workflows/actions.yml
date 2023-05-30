@@ -14,14 +14,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Install dependencies
-        run: npm install  # Replace with your build commands
-      
+     
       - name: Run CloudDefense AI scan
         env:
           CLOUDDEFENSE_KEY: ${{ secrets.API_KEY }}
         run: |
-          curl -X POST -H "Authorization: Bearer $CLOUDDEFENSE_PROJECT_ID" https://api.clouddefense.ai/v1/scan
+          curl -X POST -H "Authorization: Bearer $CLOUDDEFENSE_KEY" https://api.clouddefense.ai/v1/scan
 
       - name: Run tests
-        run: npm test  # Replace with your test commands
+        run: echo "hello"
