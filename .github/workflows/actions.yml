@@ -1,25 +1,26 @@
-name: CloudDefense AI Integration
+name: CloudDefense AI Scan
 
 on:
-  push:
-    branches:
-      - main
   pull_request:
+    types:
+      - opened
+      - synchronize
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+  scan:
+    runs-on: self-hosted
 
     steps:
-      - name: Checkout repository
+      - name: Checkout code
         uses: actions/checkout@v2
 
-     
-      - name: Run CloudDefense AI scan
-        env:
-          CLOUDDEFENSE_KEY: ${{ secrets.API_KEY }}
+      - name: CloudDefense AI Scan
         run: |
-          curl -X POST -H "Authorization: Bearer $CLOUDDEFENSE_KEY" https://api.clouddefense.ai/v2/scan
+          # Install CloudDefense AI CLI
+          curl -sSL https://get.clouddefense.ai/cli/install.sh | sh
 
-      - name: Run tests
-        run: echo "hello"
+          # Authenticate with CloudDefense AI using the API key from secrets
+          clouddefense login --api-key ${{ secrets.API_KEY }}
+
+          # Run the scan
+          clouddefense scan
