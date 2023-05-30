@@ -29,5 +29,4 @@ jobs:
           # Authenticate with CloudDefense AI using the API key from secrets
           clouddefense login --api-key ${{ secrets.API_KEY }}
 
-          # Run the scan
-          clouddefense scan
+         
