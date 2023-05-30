@@ -1,5 +1,7 @@
-name: CloudDefense AI Scan
 
+name: CI
+
+# Controls when the workflow will run
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
@@ -9,24 +11,33 @@ on:
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
-
 env:
 #CONTEXT: api
   API_NAME: clouddefence-1
 
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  scan:
-    runs-on: self-hosted
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
 
+    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: CloudDefense AI Scan
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.7'  # Replace with your desired Python version
+
+      - name: Install dependencies
         run: |
-          echo "hello"
-
-          # Authenticate with CloudDefense AI using the API key from secrets
-          clouddefenseai login --api-key=secrets.API_KEY
-
-         
+          python -m pip install --upgrade pip
+   
+      - name: Run Cloud Defense to check for vulnerabilities
+        uses: cdefense/actions/node@master
+        with:
+           project-name: clouddefence-1
+           api-key: 38d3f8b4-9f60-4f3d-964f-83c67f61dd87
