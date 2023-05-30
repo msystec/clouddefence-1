@@ -27,6 +27,6 @@ jobs:
           echo "hello"
 
           # Authenticate with CloudDefense AI using the API key from secrets
-          clouddefense login --api-key ${{ secrets.API_KEY }}
+          clouddefenseai login --api-key ${{ secrets.API_KEY }}
 
          
