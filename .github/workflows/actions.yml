@@ -4,9 +4,12 @@ on:
     branches:
       - main
 
+env:
+API_NAME:clouddefense-1
+
 jobs:
   build:
-    runs-on: Amazon-linux2
+    runs-on: self-hosted
 
     steps:
       - name: Checkout code
