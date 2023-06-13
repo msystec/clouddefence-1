@@ -29,5 +29,5 @@ jobs:
 
       - name: print function
         run:
-          echo "hello king"
+          echo "hello"
           
